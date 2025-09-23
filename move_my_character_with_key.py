@@ -12,7 +12,6 @@ dir_hori=0
 dir_vert=0
 face_dir=1
 
-
 x,y=TUK_WIDTH//2,TUK_HEIGHT//2
 
 
