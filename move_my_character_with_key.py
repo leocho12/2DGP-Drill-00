@@ -16,7 +16,7 @@ x,y=TUK_WIDTH//2,TUK_HEIGHT//2
 
 
 def key_events():
-    global running,dir_hori,dir_vert,x,y
+    global running,dir_hori,dir_vert,face_dir,x,y
 
     events=get_events()
     for event in events:
