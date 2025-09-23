@@ -12,6 +12,7 @@ dir_hori=0
 dir_vert=0
 face_dir=1
 
+
 x,y=TUK_WIDTH//2,TUK_HEIGHT//2
 
 
@@ -55,6 +56,9 @@ while running:
     clear_canvas()
 
     tuk_ground.draw(TUK_WIDTH//2,TUK_HEIGHT//2)
+
+    x = max(50, min(x + dir_hori * 5, TUK_WIDTH - 50))
+    y = max(50, min(y + dir_vert * 5, TUK_HEIGHT - 50))
     if dir_hori==0 and dir_vert==0:
         if face_dir==1:
             character.clip_draw(frame*100,300,100,100,x,y)
@@ -69,8 +73,6 @@ while running:
     key_events()
     update_canvas()
     frame = (frame + 1) % 8
-    x+=dir_hori*5
-    y+=dir_vert*5
     delay(0.05)
 
 
