@@ -10,6 +10,7 @@ running = True
 frame = 0
 dir_hori=0
 dir_vert=0
+face_dir=1
 
 x,y=TUK_WIDTH//2,TUK_HEIGHT//2
 
@@ -26,8 +27,10 @@ def key_events():
                 running = False
             elif event.key==SDLK_RIGHT:
                 dir_hori+=1
+                face_dir=1
             elif event.key==SDLK_LEFT:
                 dir_hori-=1
+                face_dir = -1
             elif event.key==SDLK_UP:
                 dir_vert+=1
             elif event.key==SDLK_DOWN:
@@ -52,7 +55,17 @@ while running:
     clear_canvas()
 
     tuk_ground.draw(TUK_WIDTH//2,TUK_HEIGHT//2)
-    character.clip_draw(frame*100,100*1,100,100,x,y)
+    if dir_hori==0 and dir_vert==0:
+        if face_dir==1:
+            character.clip_draw(frame*100,300,100,100,x,y)
+        else:
+            character.clip_draw(frame * 100, 200, 100, 100, x, y)
+    else:
+        if face_dir==1:
+            character.clip_draw(frame * 100, 100, 100, 100, x, y)
+        else:
+            character.clip_draw(frame * 100, 0, 100, 100, x, y)
+
     key_events()
     update_canvas()
     frame = (frame + 1) % 8
