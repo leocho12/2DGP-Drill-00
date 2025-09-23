@@ -14,7 +14,6 @@ face_dir=1
 
 x,y=TUK_WIDTH//2,TUK_HEIGHT//2
 
-
 def key_events():
     global running,dir_hori,dir_vert,face_dir,x,y
 
@@ -50,7 +49,6 @@ def key_events():
 
     pass
 
-
 while running:
     clear_canvas()
 
@@ -73,6 +71,5 @@ while running:
     update_canvas()
     frame = (frame + 1) % 8
     delay(0.05)
-
 
 close_canvas()
